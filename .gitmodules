@@ -1,0 +1,6 @@
+[submodule "vendor/Silex"]
+	path = vendor/Silex
+	url = https://github.com/fabpot/Silex.git
+[submodule "vendor/Symfony/Component/ClassLoader"]
+	path = vendor/Symfony/Component/ClassLoader
+	url = https://github.com/symfony/ClassLoader.git

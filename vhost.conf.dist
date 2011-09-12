@@ -1,0 +1,13 @@
+NameVirtualHost *:80
+
+<VirtualHost *:80>
+   ServerName silex-boilerplate.dev
+   DocumentRoot "/path/to/silex-boilerplate/web"
+   DirectoryIndex index.php
+
+   <Directory "/path/to/silex-boilerplate/web">
+     AllowOverride All
+     Allow from All
+   </Directory>
+</VirtualHost>
+

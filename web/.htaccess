@@ -1,0 +1,7 @@
+#SetEnv SILEX_ENV "dev"
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+
