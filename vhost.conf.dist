@@ -10,4 +10,3 @@ NameVirtualHost *:80
      Allow from All
    </Directory>
 </VirtualHost>
-

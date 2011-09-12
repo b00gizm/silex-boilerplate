@@ -48,4 +48,3 @@ $app->error(function (\Exception $ex, $code) use ($app) {
 });
 
 return $app;
-

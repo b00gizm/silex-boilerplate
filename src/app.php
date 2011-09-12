@@ -12,5 +12,4 @@ $app->get('/', function() use ($app) {
 
     return new Response(file_get_contents(__DIR__.'/../web/index.html'));
 
-});;
-
+});

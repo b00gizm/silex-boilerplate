@@ -20,4 +20,3 @@ $loader->registerPrefixes(array(
 //$loader->useIncludePath(true);
 
 $loader->register();
-

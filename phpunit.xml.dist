@@ -23,4 +23,3 @@
         </whitelist>
     </filter>
 </phpunit>
-
