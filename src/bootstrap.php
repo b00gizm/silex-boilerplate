@@ -1,14 +1,14 @@
 <?php
 
 use Silex\Application;
-use Silex\Extension\MonologExtension;
+use Codenugget\Extension\MonologExtraExtension;
 use Symfony\Component\HttpFoundation\Response;
 
 // Create the application
 $app = new Application();
 
 // Register Silex extensions
-$app->register(new MonologExtension(array(
+$app->register(new MonologExtraExtension(array(
     'monolog.class_path' => __DIR__.'/../vendor/Monolog/src',
 )));
 //$app->register(new MyAwesomeExtension());

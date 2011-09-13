@@ -2,7 +2,51 @@ Silex Boilerplate
 =================
 
 Your starting point for developing awesome web apps with the [Silex
-Framework](http://silex.sensiolabs.org/) and [HTML5 Boilerplate](http://html5boilerplate.com/). It's almost vanilla Silex with no additional extensions loaded. Over the time I'll try to add more branches with rather advanced configurations. Help is appreciated, so fork and send me a PR :)
+Framework](http://silex.sensiolabs.org/) and [HTML5 Boilerplate](http://html5boilerplate.com/).
+
+Logging branch:
+---------------
+
+Enabled Silex' `MonologExtension`. In addition to that, I created the
+`MonologExtraExtension` which gives you a bit more flexibility for the
+configuration of `Monolog`. You can now add (custom) formatters and
+processors to alter the logger's output.
+
+Standard `MonologExtension`
+
+    ``` php
+    use Silex\Extension\MonologExtension;
+
+    //...
+    $app->register(new MonologExtension(array(
+        'monolog.class_path' => __DIR__.'/../vendor/Monolog/src',
+        //...
+    )));
+
+Custom `MonologExtraExtension`
+
+    ``` php
+    use Codenugget\Extension\MonologExtraExtension;
+
+    //...
+    $app->register(new MonologExtraExtension(array(
+        'monolog.class_path' => __DIR__.'/../vendor/Monolog/src',
+        //...
+    )));
+
+By default, the `MonologExtraExtension` keeps the default
+`LineFormatter` and adds the `MemoryPeakUsageProcessor` for displaying
+memory info in your logs. You can customize this behavior via
+`monolog.formatter` and `monolog.processor`.
+
+Outputs
+
+    # MonologExtension
+    [2011-09-13 11:20:58] myapp.INFO: GET /hello [] []
+
+    # MonologExtraExtension
+    [2011-09-13 11:20:58] myapp.INFO: GET /hello [] {"memory_peak_usage":"1.25 MB"}
+
 
 Installation:
 -------------
