@@ -4,3 +4,6 @@
 [submodule "vendor/Symfony/Component/ClassLoader"]
 	path = vendor/Symfony/Component/ClassLoader
 	url = https://github.com/symfony/ClassLoader.git
+[submodule "vendor/Monolog"]
+	path = vendor/Monolog
+	url = https://github.com/Seldaek/monolog.git

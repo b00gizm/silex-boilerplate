@@ -1,12 +1,16 @@
 <?php
 
 use Silex\Application;
+use Silex\Extension\MonologExtension;
 use Symfony\Component\HttpFoundation\Response;
 
 // Create the application
 $app = new Application();
 
 // Register Silex extensions
+$app->register(new MonologExtension(array(
+    'monolog.class_path' => __DIR__.'/../vendor/Monolog/src',
+)));
 //$app->register(new MyAwesomeExtension());
 
 // Add services to the DI container
@@ -20,15 +24,17 @@ $app = new Application();
 //});
 
 // Configuration parameters
-$app['debug'] = false;
-//$app['my.param'] = '...';
+$app['debug']           = false;
+$app['monolog.logfile'] = __DIR__.'/../log/prod.log';
+//$app['my.param']      = '...';
 
 // Override settings for your dev environment
 $env = isset($_ENV['SILEX_ENV']) ? $_ENV['SILEX_ENV'] : 'dev';
 
 if ('dev' == $env) {
-    $app['debug'] = true;
-    //$app['my.param'] = '...';
+    $app['debug']           = true;
+    $app['monolog.logfile'] = __DIR__.'/../log/dev.log';
+    //$app['my.param']      = '...';
 }
 
 // Error handling

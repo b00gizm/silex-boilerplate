@@ -8,6 +8,7 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony' => array(__DIR__.'/../vendor/silex/vendor', __DIR__.'/../vendor'),
+    'Monolog' => __DIR__.'/../vendor/Monolog/src',
     'Silex'   => __DIR__.'/../vendor/Silex/src',
 ));
 
