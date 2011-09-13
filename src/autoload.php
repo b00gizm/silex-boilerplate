@@ -7,14 +7,15 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 // Register classes with namespaces
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
-    'Symfony' => array(__DIR__.'/../vendor/silex/vendor', __DIR__.'/../vendor'),
-    'Monolog' => __DIR__.'/../vendor/Monolog/src',
-    'Silex'   => __DIR__.'/../vendor/Silex/src',
+    'Codenugget' => __DIR__.'/../src',
+    'Symfony'    => array(__DIR__.'/../vendor/silex/vendor', __DIR__.'/../vendor'),
+    'Monolog'    => __DIR__.'/../vendor/Monolog/src',
+    'Silex'      => __DIR__.'/../vendor/Silex/src',
 ));
 
 // Register prefixes for libraries mathing the PEAR naming convention
 $loader->registerPrefixes(array(
-    'Pimple'  => __DIR__.'/../vendor/Silex/vendor/pimple/lib',
+    'Pimple'     => __DIR__.'/../vendor/Silex/vendor/pimple/lib',
 ));
 
 // Use the include path, too
