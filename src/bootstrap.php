@@ -3,11 +3,13 @@
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Response;
 
+use Silex\Provider\TwigServiceProvider;
+
 // Create the application
 $app = new Application();
 
-// Register Silex extensions
-//$app->register(new MyAwesomeExtension());
+// Register Silex service providers
+//$app->register(new MyAwesomeServiceProvider());
 
 // Add services to the DI container
 //$app['my.service'] = function() {
@@ -30,6 +32,14 @@ if ('dev' == $env) {
     $app['debug'] = true;
     //$app['my.param'] = '...';
 }
+
+$app->register(new TwigServiceProvider(), array(
+    'twig.path'       => __DIR__.'/../views',
+    'twig.class_path' => __DIR__.'/../vendor/Silex/vendor/twig/lib',
+    'twig.options'    => array(
+        'cache' => __DIR__.sprintf('/../cache/%s/twig/', $env),
+    ),
+));
 
 // Error handling
 $app->error(function (\Exception $ex, $code) use ($app) {

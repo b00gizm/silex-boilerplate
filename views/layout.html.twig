@@ -38,15 +38,15 @@
 
   <div id="container">
     <header>
-
+        {% block header %}{% endblock %}
     </header>
     <div id="main" role="main">
 
-        <h1>Hello from <tt>index.html</tt></h1>
+        {% block content %}{% endblock %}
 
     </div>
     <footer>
-
+        {% block footer %}{% endblock %}
     </footer>
   </div> <!--! end of #container -->
 

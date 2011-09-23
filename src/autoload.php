@@ -14,6 +14,7 @@ $loader->registerNamespaces(array(
 // Register prefixes for libraries mathing the PEAR naming convention
 $loader->registerPrefixes(array(
     'Pimple'  => __DIR__.'/../vendor/Silex/vendor/pimple/lib',
+    'Twig'    => __DIR__.'/../vendor/Silex/vendor/twig/lib',
 ));
 
 // Use the include path, too
