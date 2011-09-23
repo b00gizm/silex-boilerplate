@@ -1,14 +1,14 @@
 <?php
 
-namespace Codenugget\Extension;
+namespace Codenugget\Provider;
 
 use Monolog\Processor\MemoryPeakUsageProcessor;
 use Monolog\Formatter\LineFormatter;
 
 use Silex\Application;
-use Silex\Extension\MonologExtension;
+use Silex\Provider\MonologServiceProvider;
 
-class MonologExtraExtension extends MonologExtension
+class MonologExtraServiceProvider extends MonologServiceProvider
 {
     public function register(Application $app)
     {

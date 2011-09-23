@@ -1,17 +1,17 @@
 <?php
 
 use Silex\Application;
-use Codenugget\Extension\MonologExtraExtension;
+use Codenugget\Provider\MonologExtraServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
 // Create the application
 $app = new Application();
 
-// Register Silex extensions
-$app->register(new MonologExtraExtension(array(
+// Register Silex service providers
+$app->register(new MonologExtraServiceProvider(array(
     'monolog.class_path' => __DIR__.'/../vendor/Monolog/src',
 )));
-//$app->register(new MyAwesomeExtension());
+//$app->register(new MyAwesomeServiceProvider());
 
 // Add services to the DI container
 //$app['my.service'] = function() {
