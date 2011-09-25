@@ -53,7 +53,7 @@ Installation:
 
 Clone this repository in a directory that is accessible by your web server 
 
-     $ git https://github.com/b00giZm/silex-boilerplate && cd silex-boilerplate
+     $ git clone https://github.com/b00giZm/silex-boilerplate && cd silex-boilerplate
      $ git submodule update --init --recursive
 
 Configure a virtual host. See `vhost.conf.dist` for an example
